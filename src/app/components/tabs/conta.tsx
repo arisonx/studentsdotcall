@@ -12,8 +12,23 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { MdOutlineEdit } from "react-icons/md";
+import { Skeleton } from "@/components/ui/skeleton";
 
-export function Conta() {
+interface ContaParams {
+  nome?: string;
+  matricula?: string;
+  email?: string;
+  sem_matricula?: boolean;
+  sem_email?: boolean;
+}
+
+export function Conta({
+  matricula,
+  nome,
+  email,
+  sem_matricula,
+  sem_email,
+}: ContaParams) {
   return (
     <TabsContent value="conta" className="mt-0 w-full h-full">
       <Card className="w-full rounded-none h-full border-2 px-6">
@@ -26,29 +41,41 @@ export function Conta() {
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="nome">Nome</Label>
-                <Input
-                  disabled={true}
-                  id="nome"
-                  value="Aluno Exemplo da silva"
-                />
+                {nome ? (
+                  <Input disabled={true} id="nome" value={nome} />
+                ) : (
+                  <Skeleton className="h-8 w-[200px] -full" />
+                )}
               </div>
             </div>
-            <div className="grid w-full items-center gap-4">
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="email">E-Mail</Label>
-                <Input disabled={true} id="email" value="aluno@exemplo.com" />
+            {!sem_email && (
+              <>
+                {email ? (
+                  <div className="grid w-full items-center gap-4">
+                    <div className="flex flex-col space-y-1.5">
+                      <Label htmlFor="email">E-Mail</Label>
+                      <Input disabled={true} id="email" value={email} />
+                    </div>
+                  </div>
+                ) : (
+                  <Skeleton className="h-8 w-[200px] -full" />
+                )}
+              </>
+            )}
+
+            {!sem_matricula && (
+              <div className="grid w-full items-center gap-4">
+                <div className="flex flex-col space-y-1.5">
+                  <Label htmlFor="matricula">Matrícula</Label>
+                  {matricula ? (
+                    <Input disabled={true} id="matricula" value={matricula} />
+                  ) : (
+                    <Skeleton className="h-8 w-[200px] -full" />
+                  )}
+                </div>
               </div>
-            </div>
-            <div className="grid w-full items-center gap-4">
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="matricula">Matrícula</Label>
-                <Input
-                  disabled={true}
-                  id="matricula"
-                  value="aluno@exemplo.com"
-                />
-              </div>
-            </div>
+            )}
+
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="senha">Senha</Label>
@@ -56,7 +83,7 @@ export function Conta() {
                   disabled={true}
                   id="senha"
                   type="password"
-                  value="aosjkssjjskkjakjjss"
+                  placeholder="*****"
                 />
               </div>
             </div>

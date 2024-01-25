@@ -66,7 +66,7 @@ export function Conteudo() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="ronald.jpeg" alt="perfil" />
+                      <AvatarImage src="/ronald.jpeg" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Ronald Souza
@@ -74,7 +74,7 @@ export function Conteudo() {
                   <CardDescription>Vídeo aula sobre modelo osi</CardDescription>
                 </CardHeader>
                 <CardContent className="flex items-center flex-col gap-4">
-                  <video src="dança.mp4" controls></video>
+                  <video src="/dança.mp4" controls></video>
                   <div className="flex gap-2">
                     <Button variant="link">
                       <FaRegHeart size={20} />
@@ -118,7 +118,7 @@ export function Conteudo() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="koen.svg" alt="perfil" />
+                      <AvatarImage src="/koen.svg" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Gilbert Pereira
@@ -128,7 +128,7 @@ export function Conteudo() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex items-center flex-col gap-4">
-                  <video src="dança2.mp4" controls></video>
+                  <video src="/dança2.mp4" controls></video>
                   <div className="flex gap-2">
                     <Button variant="link">
                       <FaRegHeart size={20} />
@@ -172,7 +172,7 @@ export function Conteudo() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="ronald.jpeg" alt="perfil" />
+                      <AvatarImage src="/ronald.jpeg" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Ronald Souza
@@ -180,7 +180,7 @@ export function Conteudo() {
                   <CardDescription>Vídeo aula sobre modelo osi</CardDescription>
                 </CardHeader>
                 <CardContent className="flex items-center flex-col gap-4">
-                  <video src="dança.mp4" controls></video>
+                  <video src="/dança.mp4" controls></video>
                   <div className="flex gap-2">
                     <Button variant="link">
                       <FaRegHeart size={20} />
@@ -224,7 +224,7 @@ export function Conteudo() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="koen.svg" alt="perfil" />
+                      <AvatarImage src="/koen.svg" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Gilbert Pereira
@@ -234,7 +234,7 @@ export function Conteudo() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex items-center flex-col gap-4">
-                  <video src="dança2.mp4" controls></video>
+                  <video src="/dança2.mp4" controls></video>
                   <div className="flex gap-2">
                     <Button variant="link">
                       <FaRegHeart size={20} />
@@ -280,7 +280,7 @@ export function Conteudo() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="ronald.jpeg" sizes="20" alt="perfil" />
+                      <AvatarImage src="/ronald.jpeg" sizes="20" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Ronald Souza
@@ -288,7 +288,7 @@ export function Conteudo() {
                   <CardDescription>Pdf sobre redes</CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-2">
-                  <PdfRender path="redes1.pdf" />
+                  <PdfRender path="/redes1.pdf" />
 
                   <Link
                     href="/redes1.pdf"
@@ -307,7 +307,7 @@ export function Conteudo() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="koen.svg" sizes="20" alt="perfil" />
+                      <AvatarImage src="/koen.svg" sizes="20" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Carlos Pereira
@@ -317,7 +317,7 @@ export function Conteudo() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-2">
-                  <PdfRender path="hardware.pdf" />
+                  <PdfRender path="/hardware.pdf" />
 
                   <Link
                     href="/hardware.pdf"
@@ -336,7 +336,7 @@ export function Conteudo() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="avatar.jpeg" sizes="20" alt="perfil" />
+                      <AvatarImage src="/avatar.jpeg" sizes="20" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Denis Carmuça
@@ -346,7 +346,7 @@ export function Conteudo() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-2">
-                  <PdfRender path="segurança.pdf" />
+                  <PdfRender path="/segurança.pdf" />
 
                   <Link
                     href="/segurança.pdf"
@@ -365,7 +365,7 @@ export function Conteudo() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="ronald.jpeg" sizes="20" alt="perfil" />
+                      <AvatarImage src="/ronald.jpeg" sizes="20" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Ronald Souza
@@ -373,7 +373,7 @@ export function Conteudo() {
                   <CardDescription>Pdf sobre redes</CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-2">
-                  <PdfRender path="redes1.pdf" />
+                  <PdfRender path="/redes1.pdf" />
 
                   <Link
                     href="/redes1.pdf"
@@ -392,7 +392,7 @@ export function Conteudo() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="koen.svg" sizes="20" alt="perfil" />
+                      <AvatarImage src="/koen.svg" sizes="20" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Carlos Pereira
@@ -402,7 +402,7 @@ export function Conteudo() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-2">
-                  <PdfRender path="hardware.pdf" />
+                  <PdfRender path="/hardware.pdf" />
 
                   <Link
                     href="/hardware.pdf"
@@ -421,7 +421,7 @@ export function Conteudo() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="avatar.jpeg" sizes="20" alt="perfil" />
+                      <AvatarImage src="/avatar.jpeg" sizes="20" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Denis Carmuça
@@ -431,7 +431,7 @@ export function Conteudo() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-2">
-                  <PdfRender path="hardware.pdf" />
+                  <PdfRender path="/hardware.pdf" />
 
                   <Link
                     href="/segurança.pdf"
@@ -452,7 +452,7 @@ export function Conteudo() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="ronald.jpeg" alt="perfil" />
+                      <AvatarImage src="/ronald.jpeg" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Ronald Souza
@@ -479,7 +479,7 @@ export function Conteudo() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="avatar.jpeg" alt="perfil" />
+                      <AvatarImage src="/avatar.jpeg" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Denis Carmuça
@@ -507,7 +507,7 @@ export function Conteudo() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="albert.svg" alt="perfil" />
+                      <AvatarImage src="/albert.svg" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Pedro Sova
@@ -530,12 +530,12 @@ export function Conteudo() {
                   23/12/2021 - 22:12
                 </CardFooter>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="ronald.jpeg" alt="perfil" />
+                      <AvatarImage src="/ronald.jpeg" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Ronald Souza
@@ -562,7 +562,7 @@ export function Conteudo() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="avatar.jpeg" alt="perfil" />
+                      <AvatarImage src="/avatar.jpeg" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Denis Carmuça
@@ -590,7 +590,7 @@ export function Conteudo() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="albert.svg" alt="perfil" />
+                      <AvatarImage src="/albert.svg" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Pedro Sova

@@ -9,3 +9,50 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Aluno {
+  id        String @id @default(uuid())
+  matricula String
+  nome      String
+  senha     String
+  posts     Post[]
+
+  @@map("alunos")
+}
+
+model Professor {
+  id        String @id @default(uuid())
+  email     String
+  nome      String
+  senha     String
+  posts Post[]
+
+  @@map("professores")
+}
+
+model Diretor {
+  id    String @id @default(uuid())
+  token String
+  email String
+  senha String
+  posts Post[]
+
+  @@map("diretores")
+}
+
+model Post {
+  id         String   @id @default(uuid())
+  created_at DateTime @default(now())
+
+  //post pelo aluno
+  aluno_autor Aluno  @relation(fields: [aluno_id], references: [id])
+  aluno_id    String
+
+  // post pelo professor
+  professor_autor Professor @relation(fields: [professor_id], references: [id])
+  professor_id    String
+
+  //post pelo diretor
+  diretor_autor Diretor @relation(fields: [diretor_id], references: [id])
+  diretor_id    String
+}

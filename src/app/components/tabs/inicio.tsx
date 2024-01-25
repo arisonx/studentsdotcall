@@ -12,17 +12,42 @@ import { IoMdNotifications } from "react-icons/io";
 import { MdDateRange } from "react-icons/md";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
 import { CgFeed } from "react-icons/cg";
 import { PiVideoLight } from "react-icons/pi";
+import { Skeleton } from "@/components/ui/skeleton";
 
-export function Inicio() {
+export function SkeletonDemo() {
+  return (
+    <div className="flex items-center space-x-4">
+      <Skeleton className="h-12 w-12 rounded-full" />
+      <div className="space-y-2">
+        <Skeleton className="h-4 w-[250px]" />
+        <Skeleton className="h-4 w-[200px]" />
+      </div>
+    </div>
+  );
+}
+
+interface UserParams {
+  nome?: string;
+}
+
+export function Inicio({ nome }: UserParams) {
   return (
     <TabsContent value="inicio" className="overflow-y-auto mt-0 w-full h-full">
       <Card className="w-full px-6 overflow-y-scroll rounded-none h-full border-2">
         <CardHeader>
           <CardTitle>
-            Olá <strong>Arison Reis</strong>
+            {nome ? (
+              <>
+                <p className="flex gap-2">
+                  Olá
+                  <span>{nome}</span>
+                </p>
+              </>
+            ) : (
+              <Skeleton className="h-8 w-[200px] -full" />
+            )}
           </CardTitle>
           <CardDescription>
             Visualize suas notificações e atualizaçõs diárias
@@ -64,7 +89,6 @@ export function Inicio() {
                     <IoMdNotifications size={25} />
                     Sua senha foi alterada
                   </CardTitle>
-                  <CardDescription></CardDescription>
                 </CardHeader>
                 <CardContent className="flex items-center gap-4">
                   Sua senha foi alterada, verifique a atividade
@@ -79,8 +103,10 @@ export function Inicio() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="ronald.jpeg" alt="perfil" />
-                      <AvatarFallback>CN</AvatarFallback>
+                      <AvatarImage src="/ronald.jpeg" alt="perfil" />
+                      <AvatarFallback>
+                      <Skeleton className="h-12 w-12 rounded-full " />
+                      </AvatarFallback>
                     </Avatar>
                     Ronald Souza
                   </CardTitle>
@@ -99,8 +125,10 @@ export function Inicio() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="avatar.jpeg" alt="perfil" />
-                      <AvatarFallback>CN</AvatarFallback>
+                      <AvatarImage src="/avatar.jpeg" alt="perfil" />
+                      <AvatarFallback>
+                      <Skeleton className="h-12 w-12 rounded-full" />
+                      </AvatarFallback>
                     </Avatar>
                     Walbert Monteiro
                   </CardTitle>
@@ -116,8 +144,10 @@ export function Inicio() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="adam.svg" alt="perfil" />
-                      <AvatarFallback>CN</AvatarFallback>
+                      <AvatarImage src="/adam.svg" alt="perfil" />
+                      <AvatarFallback>
+                      <Skeleton className="h-12 w-12 rounded-full" />
+                      </AvatarFallback>
                     </Avatar>
                     Gilberto Sales
                   </CardTitle>
@@ -133,8 +163,10 @@ export function Inicio() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="mavis.svg" alt="perfil" />
-                      <AvatarFallback>CN</AvatarFallback>
+                      <AvatarImage src="/mavis.svg" alt="perfil" />
+                      <AvatarFallback>
+                      <Skeleton className="h-12 w-12 rounded-full" />
+                      </AvatarFallback>
                     </Avatar>
                     Carla Soares
                   </CardTitle>
@@ -152,8 +184,10 @@ export function Inicio() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="ronald.jpeg" sizes="20" alt="perfil" />
-                      <AvatarFallback>CN</AvatarFallback>
+                      <AvatarImage src="/ronald.jpeg" sizes="20" alt="perfil" />
+                      <AvatarFallback>
+                      <Skeleton className="h-12 w-12 rounded-full" />
+                      </AvatarFallback>
                     </Avatar>
                     Ronald Souza
                   </CardTitle>
@@ -179,8 +213,10 @@ export function Inicio() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="albert.svg" alt="perfil" />
-                      <AvatarFallback>CN</AvatarFallback>
+                      <AvatarImage src="/albert.svg" alt="perfil" />
+                      <AvatarFallback>
+                      <Skeleton className="h-12 w-12 rounded-full" />
+                      </AvatarFallback>
                     </Avatar>
                     Albert Reis
                   </CardTitle>
@@ -206,8 +242,10 @@ export function Inicio() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="selma.svg" alt="perfil" />
-                      <AvatarFallback>CN</AvatarFallback>
+                      <AvatarImage src="/selma.svg" alt="perfil" />
+                      <AvatarFallback>
+                      <Skeleton className="h-12 w-12 rounded-full" />
+                      </AvatarFallback>
                     </Avatar>
                     Selma Carvalho
                   </CardTitle>
@@ -232,8 +270,10 @@ export function Inicio() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="ronald.jpeg" alt="perfil" />
-                      <AvatarFallback>CN</AvatarFallback>
+                      <AvatarImage src="/ronald.jpeg" alt="perfil" />
+                      <AvatarFallback>
+                      <Skeleton className="h-12 w-12 rounded-full" />
+                      </AvatarFallback>
                     </Avatar>
                     Ronald Souza
                   </CardTitle>
@@ -257,8 +297,10 @@ export function Inicio() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="maria.svg" alt="perfil" />
-                      <AvatarFallback>CN</AvatarFallback>
+                      <AvatarImage src="/maria.svg" alt="perfil" />
+                      <AvatarFallback>
+                      <Skeleton className="h-12 w-12 rounded-full" />
+                      </AvatarFallback>
                     </Avatar>
                     Maria Joyce
                   </CardTitle>
@@ -288,8 +330,10 @@ export function Inicio() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="ronald.jpeg" alt="perfil" />
-                      <AvatarFallback>CN</AvatarFallback>
+                      <AvatarImage src="/ronald.jpeg" alt="perfil" />
+                      <AvatarFallback>
+                        <Skeleton className="h-12 w-12 rounded-full" />
+                      </AvatarFallback>
                     </Avatar>
                     Ronald Souza
                   </CardTitle>
@@ -313,7 +357,7 @@ export function Inicio() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="avatar.jpeg" alt="perfil" />
+                      <AvatarImage src="/avatar.jpeg" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Denis Carmuça
@@ -338,7 +382,7 @@ export function Inicio() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="ronald.jpeg" alt="perfil" />
+                      <AvatarImage src="/ronald.jpeg" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Ronald Soza
@@ -364,7 +408,7 @@ export function Inicio() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="albert.svg" alt="perfil" />
+                      <AvatarImage src="/albert.svg" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Albert Carvalho
@@ -388,7 +432,7 @@ export function Inicio() {
                 <CardHeader>
                   <CardTitle className="flex items-center justify-start gap-4">
                     <Avatar>
-                      <AvatarImage src="avatar.jpeg" alt="perfil" />
+                      <AvatarImage src="/avatar.jpeg" alt="perfil" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     Denis Carmuça
