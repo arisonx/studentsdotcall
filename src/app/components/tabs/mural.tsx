@@ -22,17 +22,16 @@ import { MdDateRange } from "react-icons/md";
 import { toast } from "sonner";
 import { PostDialog } from "../dialogs/postDialog";
 
-export function Forum() {
+export function Mural() {
   return (
-    <TabsContent value="forum" className="overflow-y-auto mt-0 w-full h-full">
+    <TabsContent value="mural" className="overflow-y-auto mt-0 w-full h-full">
       <Card className="h-auto w-full">
         <CardHeader>
           <CardTitle className="flex items-center justify-start gap-4 pt-4">
-            Fórum
+            Mural
           </CardTitle>
           <CardDescription>
-            Interaja com o público postando conteúdos que serão vistos por
-            professores e alunos do instituto.
+            Interaja com o público postando conteúdos que serão vistos por todas as turmas do intituto
           </CardDescription>
         </CardHeader>
         <CardContent className="flex items-center flex-col gap-4">

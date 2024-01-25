@@ -17,6 +17,8 @@ import { Atividade } from "../../../components/tabs/atividade";
 import { Conteudo } from "../../../components/tabs/conteudo";
 import { Forum } from "../../../components/tabs/forum";
 import { useParams } from "next/navigation";
+import { MdPublic } from "react-icons/md";
+import { Mural } from "@/app/components/tabs/mural";
 
 interface User {
   nome: string;
@@ -34,7 +36,6 @@ export default function Dashboard() {
   const router = useRouter();
   const [openMenu, setOpenMenu] = useState(true);
   const [nome, setNome] = useState("");
-  const [islogout, setIsLogout] = useState(false);
 
   const getUserData = async function () {
     const userData = await fetch("http://localhost:3000/api/user/get", {
@@ -139,6 +140,16 @@ export default function Dashboard() {
               </div>
             </TabsTrigger>
 
+            {/* MURAL */}
+            <TabsTrigger value="mural" className="w-full flex py-3">
+              <div className="w-[40%]">
+                <MdPublic size={20} />
+              </div>
+              <div className="w-[60%] flex justify-start">
+                <p>Mural</p>
+              </div>
+            </TabsTrigger>
+
             {/*LOGOUT*/}
             <TabsTrigger
               value="logout"
@@ -172,6 +183,9 @@ export default function Dashboard() {
 
           {/*FÓRUM*/}
           <Forum />
+
+          {/*MURAL */}
+          <Mural/>
         </section>
       </Tabs>
     </main>

@@ -28,6 +28,7 @@ import { IoMdEye } from "react-icons/io";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { FaCheck } from "react-icons/fa";
+import { PostDialog } from "../dialogs/postDialog";
 
 export function Conteudo() {
   return (
@@ -617,6 +618,8 @@ export function Conteudo() {
           </Tabs>
         </CardContent>
       </Card>
+
+      <PostDialog />
     </TabsContent>
   );
 }

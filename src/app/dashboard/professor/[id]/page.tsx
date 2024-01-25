@@ -17,8 +17,9 @@ import { Atividade } from "../../../components/tabs/atividade";
 import { Conteudo } from "../../../components/tabs/conteudo";
 import { Forum } from "../../../components/tabs/forum";
 import { useParams } from "next/navigation";
-import { MdOutlineGeneratingTokens } from "react-icons/md";
+import { MdOutlineGeneratingTokens, MdPublic } from "react-icons/md";
 import { Token } from "@/app/components/tabs/token";
+import { Mural } from "@/app/components/tabs/mural";
 
 interface User {
   nome: string;
@@ -155,6 +156,16 @@ export default function Professor() {
               </div>
             </TabsTrigger>
 
+            {/* MURAL */}
+            <TabsTrigger value="mural" className="w-full flex py-3">
+              <div className="w-[40%]">
+                <MdPublic size={20} />
+              </div>
+              <div className="w-[60%] flex justify-start">
+                <p>Mural</p>
+              </div>
+            </TabsTrigger>
+
             {/*LOGOUT*/}
             <TabsTrigger
               value="logout"
@@ -190,6 +201,9 @@ export default function Professor() {
 
           {/*FÓRUM*/}
           <Forum />
+
+          {/*MURAL */}
+          <Mural />
         </section>
       </Tabs>
     </main>
