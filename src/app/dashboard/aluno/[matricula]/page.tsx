@@ -179,13 +179,13 @@ export default function Dashboard() {
           <Atividade />
 
           {/*CONTEÚDO*/}
-          <Conteudo />
+          <Conteudo sem_upload={true} />
 
           {/*FÓRUM*/}
           <Forum />
 
           {/*MURAL */}
-          <Mural/>
+          <Mural />
         </section>
       </Tabs>
     </main>

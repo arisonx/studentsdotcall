@@ -30,7 +30,11 @@ import { toast } from "sonner";
 import { FaCheck } from "react-icons/fa";
 import { PostDialog } from "../dialogs/postDialog";
 
-export function Conteudo() {
+interface IData {
+  sem_upload?: boolean;
+}
+
+export function Conteudo({ sem_upload }: IData) {
   return (
     <TabsContent
       value="conteudo"
@@ -619,7 +623,7 @@ export function Conteudo() {
         </CardContent>
       </Card>
 
-      <PostDialog />
+      {!sem_upload&&(<PostDialog />)}
     </TabsContent>
   );
 }

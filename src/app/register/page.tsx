@@ -22,9 +22,6 @@ export default function Register() {
             <TabsTrigger className="w-[33.3%] rounded-xl" value="diretor">
               Diretor
             </TabsTrigger>
-            <TabsTrigger className="w-[33.3%] rounded-xl" value="publico">
-              Público
-            </TabsTrigger>
           </TabsList>
 
           {/*aluno*/}
@@ -35,8 +32,6 @@ export default function Register() {
 
           {/*DIRETORES*/}
           <DiretorForm />
-
-          <PublicoForm />
         </Tabs>
       </div>
     </main>

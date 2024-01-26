@@ -79,7 +79,7 @@ export function PostDialog() {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Save changes</Button>
+          <Button type="submit">Publicar</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
