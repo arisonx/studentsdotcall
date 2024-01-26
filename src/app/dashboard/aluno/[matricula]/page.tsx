@@ -44,12 +44,18 @@ export default function Dashboard() {
       headers: {
         "Content-Type": "application/json",
       },
-      
+      next: {
+        revalidate: 3600,
+      },
     });
 
-    const { nome }: User = await userData.json();
+    if (!userData.ok) {
+      alert("ocorreu um erro, recarregue a página");
+    } else {
+      const { nome }: User = await userData.json();
 
-    setNome(nome);
+      setNome(nome);
+    }
   };
   getUserData();
 
@@ -191,4 +197,3 @@ export default function Dashboard() {
     </main>
   );
 }
-export const revalidate = 3600;

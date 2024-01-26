@@ -46,14 +46,21 @@ export default function Professor() {
       headers: {
         "Content-Type": "application/json",
       },
+      next: {
+        revalidate: 3600,
+      },
     });
 
-    const { nome, email }: User = await userData.json();
+    if (!userData.ok) {
+      alert("ocorreu um erro, recarregue a página");
+    } else {
+      const { nome, email }: User = await userData.json();
 
-    setNome(nome);
-    setEmail(email);
+      setNome(nome);
+      setEmail(email);
+    }
   };
-   getUserData();
+  getUserData();
 
   const logout = async () => {
     router.push("/");
@@ -204,5 +211,3 @@ export default function Professor() {
     </main>
   );
 }
-
-export const revalidate = 3600;
