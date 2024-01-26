@@ -53,7 +53,7 @@ export default function Professor() {
     setNome(nome);
     setEmail(email);
   };
-  getUserData();
+   getUserData();
 
   const logout = async () => {
     router.push("/");

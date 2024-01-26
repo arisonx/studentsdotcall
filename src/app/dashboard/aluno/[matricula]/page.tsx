@@ -44,7 +44,7 @@ export default function Dashboard() {
       headers: {
         "Content-Type": "application/json",
       },
-      cache: "force-cache",
+      
     });
 
     const { nome }: User = await userData.json();
@@ -191,3 +191,4 @@ export default function Dashboard() {
     </main>
   );
 }
+export const revalidate = 3600;
