@@ -14,26 +14,45 @@ interface User {
   senha: string;
 }
 
+interface Store {
+  store: {
+    id: string;
+
+    updateNome: (nome: string) => void;
+    updateEmail: (email: string) => void;
+  };
+}
+
+const getData = async ({ store }: Store) => {
+  try {
+    const userData = await fetch("/api/user/create/professor/get", {
+      body: JSON.stringify(store.id),
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const { nome, email }: User = await userData.json();
+    store.updateNome(nome);
+    store.updateEmail(email);
+  } catch (err) {
+    alert("ocorreu um erro, recarregue a página");
+  }
+};
+
 export default async function Professor() {
   const { id }: params = useParams();
   const store = profStore();
-  async () => {
-    try {
-      const userData = await fetch("/api/user/create/professor/get", {
-        body: JSON.stringify(store.id),
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
 
-      const { nome, email }: User = await userData.json();
-      store.upateNome(nome);
-      store.updateEmail(email);
-    } catch (err) {
-      alert("ocorreu um erro, recarregue a página");
-    }
-  };
+  await getData({
+    store: {
+      id: id as string,
+
+      updateEmail: store.updateEmail,
+      updateNome: store.upateNome,
+    },
+  });
 
   store.updateId(id as string);
   return (
