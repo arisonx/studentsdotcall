@@ -16,9 +16,9 @@ export async function POST(request: Request) {
 
     if (!userExists) {
       return new Response("aluno nao existe", { status: 404 });
+    } else {
+      return new Response(JSON.stringify(userExists), { status: 200 });
     }
-
-    return new Response(JSON.stringify(userExists), { status: 200 });
   } catch (err) {
     return new Response("ocorreu um erro", { status: 500 });
   }

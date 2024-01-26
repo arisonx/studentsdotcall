@@ -38,7 +38,6 @@ export default function Professor() {
   const [openMenu, setOpenMenu] = useState(true);
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
-  const [islogout, setIsLogout] = useState(false);
 
   const getUserData = async function () {
     const userData = await fetch(
