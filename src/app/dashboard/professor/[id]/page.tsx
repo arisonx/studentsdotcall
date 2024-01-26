@@ -15,12 +15,10 @@ interface User {
 }
 
 const store = profStore();
-const { id }: params = useParams();
-
 async () => {
   try {
     const userData = await fetch("/api/user/create/professor/get", {
-      body: JSON.stringify(id),
+      body: JSON.stringify(store.id),
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,6 +34,8 @@ async () => {
 };
 
 export default async function Professor() {
+  const { id }: params = useParams();
+  store.updateId(id as string);
   return (
     <main className="w-screen h-screen relative">
       <TabsProf email={store.email} nome={store.nome} />
