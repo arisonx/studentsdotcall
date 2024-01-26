@@ -14,27 +14,28 @@ interface User {
   senha: string;
 }
 
-const store = profStore();
-async () => {
-  try {
-    const userData = await fetch("/api/user/create/professor/get", {
-      body: JSON.stringify(store.id),
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    const { nome, email }: User = await userData.json();
-    store.upateNome(nome);
-    store.updateEmail(email);
-  } catch (err) {
-    alert("ocorreu um erro, recarregue a página");
-  }
-};
-
 export default async function Professor() {
   const { id }: params = useParams();
+  const store = profStore();
+  async () => {
+    "use server";
+    try {
+      const userData = await fetch("/api/user/create/professor/get", {
+        body: JSON.stringify(store.id),
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const { nome, email }: User = await userData.json();
+      store.upateNome(nome);
+      store.updateEmail(email);
+    } catch (err) {
+      alert("ocorreu um erro, recarregue a página");
+    }
+  };
+
   store.updateId(id as string);
   return (
     <main className="w-screen h-screen relative">
