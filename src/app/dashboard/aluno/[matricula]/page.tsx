@@ -38,7 +38,7 @@ export default function Dashboard() {
   const [nome, setNome] = useState("");
 
   const getUserData = async function () {
-    const userData = await fetch("api/user/get", {
+    const userData = await fetch("127.0.1:3000/api/user/get", {
       body: JSON.stringify(matricula),
       method: "POST",
       headers: {
