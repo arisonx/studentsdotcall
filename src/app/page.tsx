@@ -14,9 +14,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Link from "next/link";
 import { HeaderWithLogo } from "./components/HeaderWithLogo";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
 import * as z from "zod";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
   FormControl,
@@ -25,31 +27,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { Loader2 } from "lucide-react";
+import { AlunoLoginForm } from "./components/loginform/aluno";
+import { ProfessorLoginForm } from "./components/loginform/professor";
 
 export default function Home() {
-
-  const router = useRouter();
-
-  const [loading, setLOading] = useState(false);
-
-  const formAlunoSchema = z.object({
-    matricula: z.string().min(2, {
-      message: "matrícula precisa ter no mínimo 2 caracteres.",
-    }),
-    nome: z.string().min(2, {
-      message: "nome precisa ter no mínimo 2 caracteres.",
-    }),
-    token: z.string().min(2, {
-      message: "token precisa ter no mínimo 2 caracteres.",
-    }),
-    senha: z.string().min(2, {
-      message: "senha precisa ter no mínimo 2 caracteres.",
-    }),
-  });
-
-
   return (
     <main className="w-screen h-screen">
       <HeaderWithLogo text="Entrar" />
@@ -66,81 +48,10 @@ export default function Home() {
               Diretor
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="aluno">
-            <Card>
-              <CardHeader>
-                <CardTitle>Aluno</CardTitle>
-                <CardDescription>
-                  Entre na sua conta como <strong>aluno</strong> para interagir,
-                  visualizar e postar conteúdos.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="space-y-1">
-                  <Label htmlFor="aluno_matricula">Matrícula</Label>
-                  <Input
-                    id="aluno_matricula"
-                    placeholder="informe sua matrícula"
-                  />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="aluno_senha">Senha</Label>
-                  <Input id="aluno_senha" placeholder="informe sua senha" />
-                </div>
-              </CardContent>
-              <CardFooter className="flex gap-10 items-center">
-                <Button className="px-10">Entrar</Button>
-                <Link
-                  className="flex items-center font-light text-[1rem] gap-1 border-b-[1px] border-b-blue-950 text-blueborder-b-blue-950"
-                  href="/register"
-                >
-                  não tenho uma conta
-                  <IoIosArrowRoundForward />
-                </Link>
-              </CardFooter>
-            </Card>
-          </TabsContent>
 
-          {/*PROFESSORES*/}
-          <TabsContent value="professor">
-            <Card>
-              <CardHeader>
-                <CardTitle>Professor</CardTitle>
-                <CardDescription>
-                  Entre na sua conta como <strong>professor</strong> para
-                  administrar, interagir e postar conteúdos.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="space-y-1">
-                  <Label htmlFor="professor_email">E-Mail institucional</Label>
-                  <Input
-                    id="professor_email"
-                    placeholder="informe seu e-mail institucional"
-                    type="text"
-                  />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="professor_senha">Senha</Label>
-                  <Input
-                    id="professor_senha"
-                    placeholder="informe sua senha"
-                    type="password"
-                  />
-                </div>
-              </CardContent>
-              <CardFooter className="flex gap-10 items-center">
-                <Button className="px-10">Entrar</Button>
-                <Link
-                  className="flex items-center font-light text-[1rem] gap-1 border-b-[1px] border-b-blue-950 text-blueborder-b-blue-950"
-                  href="/register"
-                >
-                  Não tenho uma conta
-                  <IoIosArrowRoundForward />
-                </Link>
-              </CardFooter>
-            </Card>
-          </TabsContent>
+          <AlunoLoginForm />
+
+          <ProfessorLoginForm />
 
           {/*DIRETORES*/}
           <TabsContent value="diretor">
