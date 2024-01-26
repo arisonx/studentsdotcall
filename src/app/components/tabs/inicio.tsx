@@ -16,18 +16,6 @@ import { CgFeed } from "react-icons/cg";
 import { PiVideoLight } from "react-icons/pi";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export function SkeletonDemo() {
-  return (
-    <div className="flex items-center space-x-4">
-      <Skeleton className="h-12 w-12 rounded-full" />
-      <div className="space-y-2">
-        <Skeleton className="h-4 w-[250px]" />
-        <Skeleton className="h-4 w-[200px]" />
-      </div>
-    </div>
-  );
-}
-
 interface UserParams {
   nome?: string;
 }
@@ -39,12 +27,10 @@ export function Inicio({ nome }: UserParams) {
         <CardHeader>
           <CardTitle>
             {nome ? (
-              <>
-                <p className="flex gap-2">
-                  Olá
-                  <span>{nome}</span>
-                </p>
-              </>
+              <p className="flex gap-2">
+                Olá
+                <span>{nome}</span>
+              </p>
             ) : (
               <Skeleton className="h-8 w-[200px] -full" />
             )}
@@ -105,7 +91,7 @@ export function Inicio({ nome }: UserParams) {
                     <Avatar>
                       <AvatarImage src="/ronald.jpeg" alt="perfil" />
                       <AvatarFallback>
-                      <Skeleton className="h-12 w-12 rounded-full " />
+                        <Skeleton className="h-12 w-12 rounded-full " />
                       </AvatarFallback>
                     </Avatar>
                     Ronald Souza
@@ -127,7 +113,7 @@ export function Inicio({ nome }: UserParams) {
                     <Avatar>
                       <AvatarImage src="/avatar.jpeg" alt="perfil" />
                       <AvatarFallback>
-                      <Skeleton className="h-12 w-12 rounded-full" />
+                        <Skeleton className="h-12 w-12 rounded-full" />
                       </AvatarFallback>
                     </Avatar>
                     Walbert Monteiro
@@ -146,7 +132,7 @@ export function Inicio({ nome }: UserParams) {
                     <Avatar>
                       <AvatarImage src="/adam.svg" alt="perfil" />
                       <AvatarFallback>
-                      <Skeleton className="h-12 w-12 rounded-full" />
+                        <Skeleton className="h-12 w-12 rounded-full" />
                       </AvatarFallback>
                     </Avatar>
                     Gilberto Sales
@@ -165,7 +151,7 @@ export function Inicio({ nome }: UserParams) {
                     <Avatar>
                       <AvatarImage src="/mavis.svg" alt="perfil" />
                       <AvatarFallback>
-                      <Skeleton className="h-12 w-12 rounded-full" />
+                        <Skeleton className="h-12 w-12 rounded-full" />
                       </AvatarFallback>
                     </Avatar>
                     Carla Soares
@@ -186,7 +172,7 @@ export function Inicio({ nome }: UserParams) {
                     <Avatar>
                       <AvatarImage src="/ronald.jpeg" sizes="20" alt="perfil" />
                       <AvatarFallback>
-                      <Skeleton className="h-12 w-12 rounded-full" />
+                        <Skeleton className="h-12 w-12 rounded-full" />
                       </AvatarFallback>
                     </Avatar>
                     Ronald Souza
@@ -215,7 +201,7 @@ export function Inicio({ nome }: UserParams) {
                     <Avatar>
                       <AvatarImage src="/albert.svg" alt="perfil" />
                       <AvatarFallback>
-                      <Skeleton className="h-12 w-12 rounded-full" />
+                        <Skeleton className="h-12 w-12 rounded-full" />
                       </AvatarFallback>
                     </Avatar>
                     Albert Reis
@@ -244,7 +230,7 @@ export function Inicio({ nome }: UserParams) {
                     <Avatar>
                       <AvatarImage src="/selma.svg" alt="perfil" />
                       <AvatarFallback>
-                      <Skeleton className="h-12 w-12 rounded-full" />
+                        <Skeleton className="h-12 w-12 rounded-full" />
                       </AvatarFallback>
                     </Avatar>
                     Selma Carvalho
@@ -272,7 +258,7 @@ export function Inicio({ nome }: UserParams) {
                     <Avatar>
                       <AvatarImage src="/ronald.jpeg" alt="perfil" />
                       <AvatarFallback>
-                      <Skeleton className="h-12 w-12 rounded-full" />
+                        <Skeleton className="h-12 w-12 rounded-full" />
                       </AvatarFallback>
                     </Avatar>
                     Ronald Souza
@@ -299,7 +285,7 @@ export function Inicio({ nome }: UserParams) {
                     <Avatar>
                       <AvatarImage src="/maria.svg" alt="perfil" />
                       <AvatarFallback>
-                      <Skeleton className="h-12 w-12 rounded-full" />
+                        <Skeleton className="h-12 w-12 rounded-full" />
                       </AvatarFallback>
                     </Avatar>
                     Maria Joyce

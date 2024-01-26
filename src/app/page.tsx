@@ -14,8 +14,42 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Link from "next/link";
 import { HeaderWithLogo } from "./components/HeaderWithLogo";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function Home() {
+
+  const router = useRouter();
+
+  const [loading, setLOading] = useState(false);
+
+  const formAlunoSchema = z.object({
+    matricula: z.string().min(2, {
+      message: "matrícula precisa ter no mínimo 2 caracteres.",
+    }),
+    nome: z.string().min(2, {
+      message: "nome precisa ter no mínimo 2 caracteres.",
+    }),
+    token: z.string().min(2, {
+      message: "token precisa ter no mínimo 2 caracteres.",
+    }),
+    senha: z.string().min(2, {
+      message: "senha precisa ter no mínimo 2 caracteres.",
+    }),
+  });
+
+
   return (
     <main className="w-screen h-screen">
       <HeaderWithLogo text="Entrar" />

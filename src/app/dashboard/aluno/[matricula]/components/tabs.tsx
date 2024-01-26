@@ -11,54 +11,22 @@ import { useState } from "react";
 import { FaCircleArrowLeft } from "react-icons/fa6";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useRouter } from "next/navigation";
-import { Inicio } from "../../../components/tabs/inicio";
-import { Conta } from "../../../components/tabs/conta";
-import { Atividade } from "../../../components/tabs/atividade";
-import { Conteudo } from "../../../components/tabs/conteudo";
-import { Forum } from "../../../components/tabs/forum";
-import { useParams } from "next/navigation";
-import { MdOutlineGeneratingTokens, MdPublic } from "react-icons/md";
-import { Token } from "@/app/components/tabs/token";
+import { Inicio } from "../../../../components/tabs/inicio";
+import { Conta } from "../../../../components/tabs/conta";
+import { Atividade } from "../../../../components/tabs/atividade";
+import { Conteudo } from "../../../../components/tabs/conteudo";
+import { Forum } from "../../../../components/tabs/forum";
+import { MdPublic } from "react-icons/md";
 import { Mural } from "@/app/components/tabs/mural";
 
-interface User {
-  nome: string;
-  id: string;
-  email: string;
-  senha: string;
-}
-
 interface params {
-  id?: string;
+  matricula?: string;
+  nome: string;
 }
 
-export default function Professor() {
-  const { id }: params = useParams();
+export function Main({ matricula, nome }: params) {
   const router = useRouter();
   const [openMenu, setOpenMenu] = useState(true);
-  const [nome, setNome] = useState("");
-  const [email, setEmail] = useState("");
-
-  const getUserData = async function () {
-    const userData = await fetch("/api/user/create/professor/get", {
-      body: JSON.stringify(id),
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    if (!userData.ok) {
-      alert("ocorreu um erro, recarregue a página");
-    } else {
-      const { nome, email }: User = await userData.json();
-
-      setNome(nome);
-      setEmail(email);
-    }
-  };
-  getUserData();
-
   const logout = async () => {
     router.push("/");
   };
@@ -66,9 +34,8 @@ export default function Professor() {
   const handleSideBar = () => {
     setOpenMenu(!openMenu);
   };
-
   return (
-    <main className="w-screen h-screen relative">
+    <>
       {!openMenu && (
         <Button
           className="absolute top-0 left-1 px-1"
@@ -106,7 +73,7 @@ export default function Professor() {
               </div>
             </TabsTrigger>
 
-            {/*cCONTEÚDO*/}
+            {/*CONTEÚDO*/}
             <TabsTrigger value="conteudo" className="w-full flex py-3">
               <div className="w-[40%] flex">
                 <PiVideoLight size={20} />
@@ -123,15 +90,6 @@ export default function Professor() {
               </div>
               <div className="w-[60%] flex justify-start">
                 <p>Conta</p>
-              </div>
-            </TabsTrigger>
-
-            <TabsTrigger value="token" className="w-full flex py-3">
-              <div className="w-[40%] flex">
-                <MdOutlineGeneratingTokens size={20} />
-              </div>
-              <div className="w-[60%] flex justify-start">
-                <p>Token</p>
               </div>
             </TabsTrigger>
 
@@ -188,15 +146,13 @@ export default function Professor() {
           <Inicio nome={nome} />
 
           {/*CONTA*/}
-          <Conta nome={nome} email={email} sem_matricula={true} />
+          <Conta matricula={matricula!} nome={nome} sem_email={true} />
 
           {/*ATIVIDADES*/}
           <Atividade />
 
-          <Token />
-
           {/*CONTEÚDO*/}
-          <Conteudo />
+          <Conteudo sem_upload={true} />
 
           {/*FÓRUM*/}
           <Forum />
@@ -205,6 +161,6 @@ export default function Professor() {
           <Mural />
         </section>
       </Tabs>
-    </main>
+    </>
   );
 }
