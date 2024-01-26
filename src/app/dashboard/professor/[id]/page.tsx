@@ -41,7 +41,7 @@ export default function Professor() {
 
   const getUserData = async function () {
     const userData = await fetch(
-      "127.0.1:3000/api/user/create/professor/get",
+      "/api/user/create/professor/get",
       {
         body: JSON.stringify(id),
         method: "POST",
