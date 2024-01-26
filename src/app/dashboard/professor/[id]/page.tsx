@@ -40,17 +40,13 @@ export default function Professor() {
   const [email, setEmail] = useState("");
 
   const getUserData = async function () {
-    const userData = await fetch(
-      "/api/user/create/professor/get",
-      {
-        body: JSON.stringify(id),
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        cache: "force-cache",
-      }
-    );
+    const userData = await fetch("/api/user/create/professor/get", {
+      body: JSON.stringify(id),
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     const { nome, email }: User = await userData.json();
 
@@ -208,3 +204,5 @@ export default function Professor() {
     </main>
   );
 }
+
+export const revalidate = 3600;
