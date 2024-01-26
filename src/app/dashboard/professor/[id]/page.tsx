@@ -18,7 +18,6 @@ export default async function Professor() {
   const { id }: params = useParams();
   const store = profStore();
   async () => {
-    "use server";
     try {
       const userData = await fetch("/api/user/create/professor/get", {
         body: JSON.stringify(store.id),

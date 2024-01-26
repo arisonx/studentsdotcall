@@ -19,7 +19,7 @@ export default async function DashboardAluno() {
   const { matricula }: params = useParams();
   alunostore.updatematricula(matricula as string);
   async () => {
-    "use server";
+  
     try {
       const userData = await fetch("/api/user/get", {
         body: JSON.stringify(alunostore.matricula),
